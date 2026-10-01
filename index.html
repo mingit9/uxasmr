@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>minecraft world</title>
+	<style>
+		body{background: url("background.png");
+			background-size: 100%;
+			overflow: hidden;
+			text-align: center;
+			font-family: "minecraft", sans-serif;}
+		@font-face {
+			font-family: "minecraft";
+			src: url("Minecraft.ttf") format("truetype");
+			font-weight: normal;
+			font-style: normal;
+			font-display: swap;
+		}
+		.h1{width: 1000px;
+			font-size: 100px;
+			font-style: normal;
+			margin: auto;
+			padding: 70px 0px 20px;
+			color: white;
+			-webkit-text-stroke: 15px #202020;
+			paint-order: stroke fill;}
+		.h2{width: 1000px;
+			font-size: 20px;
+			font-style: normal;
+			margin: auto;
+			color: #3C3C3C;
+			padding: 10px;}
+		.items{
+			display: grid;
+			grid-template-columns: repeat(4, 200px);
+			justify-content: center;
+			gap: 25px;
+			padding: 40px 0px;
+		}
+		.items img{
+			width: 190px;
+			height: auto;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="h1">Minecraft sound</div>
+		<div class="h2">click and play!</div>
+	</section>
+	<div class="items">
+		<img src="block.png" id="block">
+		<img src="goldenapple.png" id="goldenapple">
+		<img src="dsword.png" id="dsword">
+		<img src="potion.png" id="potion">
+		<img src="gbottle.png" id="gbottle">
+		<img src="tnt.png" id="tnt">
+		<img src="dog.png" id="dog">
+		<img src="heart.png" id="heart">
+	</div>
+	<audio src="mcclick.mp3" id="mcclick" loop></audio>
+	<audio src="eat.mp3" id="eat" loop></audio>
+	<audio src="sword.mp3" id="sword" loop></audio>
+	<audio src="drink.mp3" id="drink" loop></audio>
+	<audio src="levelup.mp3" id="levelup" loop></audio>
+	<audio src="tnt.mp3" id="explode"></audio>
+	<audio src="break.mp3" id="breaksound" loop></audio>
+	<audio src="bark.mp3" id="bark" loop></audio>
+	<audio src="hurt.mp3" id="hurt" loop></audio>
+	<script>
+	let state = "off";
+	block.onclick = function(){
+		if(state == "off"){
+			breaksound.play();
+			block.src = "block1.png";
+			state = "on";
+		}else{
+			breaksound.pause();
+			breaksound.currentTime = 0;
+			block.src = "block.png";
+			state = "off";
+		}
+	}
+
+	let state2 = "off";
+	goldenapple.onclick = function(){
+		if(state2 == "off"){
+			eat.play();
+			goldenapple.src = "goldenapple1.png";
+			state2 = "on";
+		}else{
+			eat.pause();
+			eat.currentTime = 0;
+			goldenapple.src = "goldenapple.png";
+			state2 = "off";
+		}
+	}
+
+	let state3 = "off";
+	dsword.onclick = function(){
+		if(state3 == "off"){
+			sword.play();
+			dsword.src = "dsword1.png";
+			state3 = "on";
+		}else{
+			sword.pause();
+			sword.currentTime = 0;
+			dsword.src = "dsword.png";
+			state3 = "off";
+		}
+	}
+
+	let state4 = "off";
+	potion.onclick = function(){
+		if(state4 == "off"){
+			drink.play();
+			potion.src = "potion1.png";
+			state4 = "on";
+		}else{
+			drink.pause();
+			drink.currentTime = 0;
+			potion.src = "potion.png";
+			state4 = "off";
+		}
+	}
+
+	let state5 = "off";
+	gbottle.onclick = function(){
+		if(state5 == "off"){
+			levelup.play();
+			gbottle.src = "gbottle1.png";
+			state5 = "on";
+		}else{
+			levelup.pause();
+			levelup.currentTime = 0;
+			gbottle.src = "gbottle.png";
+			state5 = "off";
+		}
+	}
+
+	let state6 = "off";
+	tnt.onclick = function(){
+		if(state6 == "off"){
+			explode.play();
+			tnt.src = "tnt1.png";
+			state6 = "on";
+		}else{
+			explode.pause();
+			explode.currentTime = 0;
+			tnt.src = "tnt.png";
+			state6 = "off";
+		}
+	}
+
+	let state7 = "off";
+	dog.onclick = function(){
+		if(state7 == "off"){
+			bark.play();
+			dog.src = "dog1.png";
+			state7 = "on";
+		}else{
+			bark.pause();
+			bark.currentTime = 0;
+			dog.src = "dog.png";
+			state7 = "off";
+		}
+	}
+
+	let state8 = "off";
+	heart.onclick = function(){
+		if(state8 == "off"){
+			hurt.play();
+			heart.src = "heart1.png";
+			state8 = "on";
+		}else{
+			hurt.pause();
+			hurt.currentTime = 0;
+			heart.src = "heart.png";
+			state8 = "off";
+		}
+	}
+	</script>
+</body>
+</html>
